@@ -49,3 +49,12 @@ qtcreator-*
 
 # Catkin custom files
 CATKIN_IGNORE
+
+# Extra
+*/log/*
+*/install/*
+LICENSE
+*.cfg
+__init__.py
+test
+resource
