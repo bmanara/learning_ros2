@@ -2,21 +2,23 @@ import rclpy
 from rclpy.node import Node
 
 from std_msgs.msg import String
+from interfaces.msg import Measurements
 
 class SubscriberNode(Node):
     def __init__(self):
         super().__init__('subscriber')
         self.subscription = self.create_subscription(
-            String, 
-            'comment', 
+            Measurements, 
+            'measurement', 
             self.listener_callback, 
             10)
         
         self.subscription
 
     def listener_callback(self, msg):
-        data = msg.data
-        self.get_logger().info(f'Received: %s {data}' )
+        height = msg.height
+        weight = msg.weight 
+        self.get_logger().info(f'Received: Height={height} | Weight={weight}' )
 
 def main(args=None):
     rclpy.init()
