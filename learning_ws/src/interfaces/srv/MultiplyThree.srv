@@ -3,3 +3,4 @@ int64 y
 int64 z
 ---
 int64 product
+int64 count

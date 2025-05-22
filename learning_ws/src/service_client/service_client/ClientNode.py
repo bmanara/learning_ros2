@@ -37,8 +37,8 @@ def main(args=None):
 
     future = client_node.send_request(int(x), int(y), int(z))
     rclpy.spin_until_future_complete(client_node, future)
-    response = future.result()
-    client_node.get_logger().info(f'Result of multiply_three: {response.product}')
+    response = future.result() 
+    client_node.get_logger().info(f'[{response.count}] Result of multiply_three: {response.product}')
 
     client_node.destroy_node()
     rclpy.shutdown()
